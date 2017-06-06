@@ -50,6 +50,27 @@
     <ClCompile Include="GeneratedFiles\qrc_firma.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="Drukarnia.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ksiegarnia internetowa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ksiegarnia.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Przedsiebiorstwo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TworzenieObiektu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_TworzenieObiektu.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_TworzenieObiektu.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="firma.h">
@@ -61,9 +82,30 @@
     <CustomBuild Include="firma.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="TworzenieObiektu.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="TworzenieObiektu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_firma.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Drukarnia.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ksiegarnia internetowa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ksiegarnia.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Przedsiebiorstwo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_TworzenieObiektu.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

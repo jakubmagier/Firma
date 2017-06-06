@@ -1,29 +1,234 @@
-<UI version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>FirmaClass</class>
- <widget class="QMainWindow" name="FirmaClass" >
-  <property name="objectName" >
-   <string notr="true">FirmaClass</string>
-  </property>
-  <property name="geometry" >
+ <widget class="QMainWindow" name="FirmaClass">
+  <property name="geometry">
    <rect>
-	<x>0</x>
-	<y>0</y>
-	<width>600</width>
-	<height>400</height>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>502</height>
    </rect>
   </property>
-  <property name="windowTitle" >
+  <property name="windowTitle">
    <string>Firma</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>160</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="przycisk1">
+       <property name="text">
+        <string>Wyswietl cala baze</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="przycisk2">
+       <property name="text">
+        <string>Wyswietl dane (wybranego)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="przycisk3">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>Dodaj obiekt</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="przycisk4">
+       <property name="text">
+        <string>Usun (wybrany)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="przycisk5">
+       <property name="text">
+        <string>Zapisz do pliku</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="przycisk6">
+       <property name="text">
+        <string>Wczytaj z pliku</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="przyciskZamknij">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>270</y>
+      <width>111</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ZAMKNIJ</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>270</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Lista obiektow:</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="poleTekstowe">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>30</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="listaObiektow">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>260</y>
+      <width>201</width>
+      <height>151</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources>
-   <include location="firma.qrc"/>
+  <include location="firma.qrc"/>
  </resources>
- <connections/>
-</UI>
+ <connections>
+  <connection>
+   <sender>przyciskZamknij</sender>
+   <signal>clicked()</signal>
+   <receiver>FirmaClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>485</x>
+     <y>328</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>przycisk3</sender>
+   <signal>clicked()</signal>
+   <receiver>FirmaClass</receiver>
+   <slot>otworzTworzenieObiektu()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>235</x>
+     <y>120</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>przycisk4</sender>
+   <signal>clicked()</signal>
+   <receiver>FirmaClass</receiver>
+   <slot>usunObiekt()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>183</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>219</x>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>przycisk1</sender>
+   <signal>clicked()</signal>
+   <receiver>FirmaClass</receiver>
+   <slot>wyswietlStan()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>250</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>przycisk2</sender>
+   <signal>clicked()</signal>
+   <receiver>FirmaClass</receiver>
+   <slot>wyswietlDaneWybranego()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>75</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>198</x>
+     <y>86</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>otworzTworzenieObiektu()</slot>
+  <slot>dodajObiekt()</slot>
+  <slot>usunObiekt()</slot>
+  <slot>wyswietlStan()</slot>
+  <slot>wyswietlDaneWybranego()</slot>
+ </slots>
+</ui>
