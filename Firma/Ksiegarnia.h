@@ -9,13 +9,13 @@ using namespace std;
 ///Klasa Ksiegarnia, pochodna klasy Przedsiebiorstwo
 class Ksiegarnia: public Przedsiebiorstwo
 {
+	int typ = 1;
+
 protected:
 
 	int ilosc_ksiazek; ///<zmienna przechowujaca ilosc ksiazek w ksiegarni
 
 public:
-
-	static int iloscKsiegarni; ///<zmienna przechowujaca ilosc utworzonych obiektow (Ksiegarni)
 	///Konstruktor domyslny
 	Ksiegarnia();
 	///Konstruktor z parametrami
@@ -24,4 +24,8 @@ public:
 	~Ksiegarnia(); 
 	///Metoda umozliwiajaca wyswietlenie danych obiektu, zamienia typy danych na string.
 	string wyswietlDane();
+	///Metoda umozliwiajaca wyswietlenie typu obiektu.
+	int wyswietlTyp();
+	///Metoda umozliwiajaca wpisanie danych z pliku do obiektu
+	void wpiszDaneZPliku(ifstream& wejscie);
 };

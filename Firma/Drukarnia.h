@@ -9,6 +9,8 @@ using namespace std;
 ///Klasa Drukarnia, pochodna klasy Przedsiebiorstwo
 class Drukarnia: public Przedsiebiorstwo
 {
+	int typ = 3;
+
 protected:
 
 	int ilosc_drukarek; ///<Zmienna przechowujaca liczbe drukarek znajdujacych sie w drukarni
@@ -22,5 +24,8 @@ public:
 	~Drukarnia();
 	///Metoda umozliwiajaca wyswietlenie danych obiektu, zamienia typy danych na string.
 	string wyswietlDane();
-	static int iloscDrukarni; ///<zmienna przechowujaca ilosc utworzonych obiektow (Drukarni)
+	///Metoda umozliwiajaca wyswietlenie typu obiektu.
+	int wyswietlTyp();
+	///Metoda umozliwiajaca wpisanie danych z pliku do obiektu
+	void wpiszDaneZPliku(ifstream & wejscie);
 };

@@ -43,6 +43,7 @@ public:
     QLabel *label;
     QTextBrowser *poleTekstowe;
     QListWidget *listaObiektow;
+    QLabel *miejsceZdjecia;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -56,7 +57,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayoutWidget = new QWidget(centralWidget);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(20, 20, 160, 211));
+        verticalLayoutWidget->setGeometry(QRect(20, 20, 183, 227));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -64,47 +65,75 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         przycisk1 = new QPushButton(verticalLayoutWidget);
         przycisk1->setObjectName(QStringLiteral("przycisk1"));
+        QFont font;
+        font.setFamily(QStringLiteral("Comic Sans MS"));
+        font.setPointSize(10);
+        font.setBold(true);
+        font.setItalic(true);
+        font.setWeight(75);
+        przycisk1->setFont(font);
 
         verticalLayout->addWidget(przycisk1);
 
         przycisk2 = new QPushButton(verticalLayoutWidget);
         przycisk2->setObjectName(QStringLiteral("przycisk2"));
+        przycisk2->setEnabled(true);
+        przycisk2->setFont(font);
 
         verticalLayout->addWidget(przycisk2);
 
         przycisk3 = new QPushButton(verticalLayoutWidget);
         przycisk3->setObjectName(QStringLiteral("przycisk3"));
-        przycisk3->setEnabled(true);
+        przycisk3->setFont(font);
 
         verticalLayout->addWidget(przycisk3);
 
         przycisk4 = new QPushButton(verticalLayoutWidget);
         przycisk4->setObjectName(QStringLiteral("przycisk4"));
+        przycisk4->setFont(font);
 
         verticalLayout->addWidget(przycisk4);
 
         przycisk5 = new QPushButton(verticalLayoutWidget);
         przycisk5->setObjectName(QStringLiteral("przycisk5"));
+        przycisk5->setFont(font);
 
         verticalLayout->addWidget(przycisk5);
 
         przycisk6 = new QPushButton(verticalLayoutWidget);
         przycisk6->setObjectName(QStringLiteral("przycisk6"));
+        przycisk6->setFont(font);
 
         verticalLayout->addWidget(przycisk6);
 
         przyciskZamknij = new QPushButton(centralWidget);
         przyciskZamknij->setObjectName(QStringLiteral("przyciskZamknij"));
-        przyciskZamknij->setGeometry(QRect(430, 270, 111, 51));
+        przyciskZamknij->setGeometry(QRect(480, 390, 111, 51));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Kalinga"));
+        font1.setPointSize(14);
+        przyciskZamknij->setFont(font1);
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(20, 270, 81, 16));
+        label->setGeometry(QRect(40, 250, 141, 16));
+        QFont font2;
+        font2.setFamily(QStringLiteral("Algerian"));
+        font2.setPointSize(12);
+        label->setFont(font2);
         poleTekstowe = new QTextBrowser(centralWidget);
         poleTekstowe->setObjectName(QStringLiteral("poleTekstowe"));
-        poleTekstowe->setGeometry(QRect(260, 30, 256, 192));
+        poleTekstowe->setGeometry(QRect(250, 20, 256, 192));
+        QFont font3;
+        font3.setPointSize(10);
+        poleTekstowe->setFont(font3);
         listaObiektow = new QListWidget(centralWidget);
         listaObiektow->setObjectName(QStringLiteral("listaObiektow"));
-        listaObiektow->setGeometry(QRect(110, 260, 201, 151));
+        listaObiektow->setGeometry(QRect(30, 270, 201, 151));
+        listaObiektow->setFrameShape(QFrame::WinPanel);
+        listaObiektow->setFrameShadow(QFrame::Sunken);
+        miejsceZdjecia = new QLabel(centralWidget);
+        miejsceZdjecia->setObjectName(QStringLiteral("miejsceZdjecia"));
+        miejsceZdjecia->setGeometry(QRect(270, 230, 181, 151));
         FirmaClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(FirmaClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -119,10 +148,13 @@ public:
 
         retranslateUi(FirmaClass);
         QObject::connect(przyciskZamknij, SIGNAL(clicked()), FirmaClass, SLOT(close()));
-        QObject::connect(przycisk3, SIGNAL(clicked()), FirmaClass, SLOT(otworzTworzenieObiektu()));
-        QObject::connect(przycisk4, SIGNAL(clicked()), FirmaClass, SLOT(usunObiekt()));
+        QObject::connect(przycisk2, SIGNAL(clicked()), FirmaClass, SLOT(otworzTworzenieObiektu()));
+        QObject::connect(przycisk3, SIGNAL(clicked()), FirmaClass, SLOT(usunObiekt()));
         QObject::connect(przycisk1, SIGNAL(clicked()), FirmaClass, SLOT(wyswietlStan()));
-        QObject::connect(przycisk2, SIGNAL(clicked()), FirmaClass, SLOT(wyswietlDaneWybranego()));
+        QObject::connect(listaObiektow, SIGNAL(itemPressed(QListWidgetItem*)), FirmaClass, SLOT(wyswietlDaneWybranego()));
+        QObject::connect(przycisk6, SIGNAL(clicked()), FirmaClass, SLOT(wczytajPlik()));
+        QObject::connect(przycisk4, SIGNAL(clicked()), FirmaClass, SLOT(zapiszDoObecnego()));
+        QObject::connect(przycisk5, SIGNAL(clicked()), FirmaClass, SLOT(zapiszJako()));
 
         QMetaObject::connectSlotsByName(FirmaClass);
     } // setupUi
@@ -131,13 +163,14 @@ public:
     {
         FirmaClass->setWindowTitle(QApplication::translate("FirmaClass", "Firma", Q_NULLPTR));
         przycisk1->setText(QApplication::translate("FirmaClass", "Wyswietl cala baze", Q_NULLPTR));
-        przycisk2->setText(QApplication::translate("FirmaClass", "Wyswietl dane (wybranego)", Q_NULLPTR));
-        przycisk3->setText(QApplication::translate("FirmaClass", "Dodaj obiekt", Q_NULLPTR));
-        przycisk4->setText(QApplication::translate("FirmaClass", "Usun (wybrany)", Q_NULLPTR));
-        przycisk5->setText(QApplication::translate("FirmaClass", "Zapisz do pliku", Q_NULLPTR));
+        przycisk2->setText(QApplication::translate("FirmaClass", "Dodaj obiekt", Q_NULLPTR));
+        przycisk3->setText(QApplication::translate("FirmaClass", "Usun (zaznaczony obiekt)", Q_NULLPTR));
+        przycisk4->setText(QApplication::translate("FirmaClass", "Zapisz", Q_NULLPTR));
+        przycisk5->setText(QApplication::translate("FirmaClass", "Zapisz jako", Q_NULLPTR));
         przycisk6->setText(QApplication::translate("FirmaClass", "Wczytaj z pliku", Q_NULLPTR));
         przyciskZamknij->setText(QApplication::translate("FirmaClass", "ZAMKNIJ", Q_NULLPTR));
         label->setText(QApplication::translate("FirmaClass", "Lista obiektow:", Q_NULLPTR));
+        miejsceZdjecia->setText(QString());
     } // retranslateUi
 
 };

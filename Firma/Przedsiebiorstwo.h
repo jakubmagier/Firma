@@ -14,7 +14,6 @@ protected:
 	string adres; ///<zmienna przechowujaca adres firmy
 	int nr_tel;	///<zmienna przechowujaca telefon do firmy
 	int ilosc_pracownikow; ///<zmienna przechowujaca ilosc pracownikow firmy
-	static int iloscPrzedsiebiorstw; ///<zmienna przechowujaca ilosc utworzonych obiektow (Przedsiebiorstw)
 
 public:
 	///Kontruktor domyslny
@@ -26,4 +25,14 @@ public:
 	Umozliwia wyswietlenie danych obiektu, zamienia typy danych na string.
 	*/
 	virtual string wyswietlDane();
+	///Funkcja wirtualna
+	/**
+	Umozliwia wyswietlenie typu obiektu (1, 2, 3)
+	*/
+	virtual int wyswietlTyp()=0;
+	///Funkcja wirtualna
+	/**
+	Umozliwia wpisanie danych z pliku do obiektu
+	*/
+	virtual void wpiszDaneZPliku(ifstream& wejscie);
 };

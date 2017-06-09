@@ -8,7 +8,8 @@ using namespace std;
 ///Klasa Ksiegarnia Internetowa, pochodna klasy Ksiegarnia
 class KsiegarniaInternetowa : public Ksiegarnia
 {
-	
+	int typ = 2;
+
 public:
 	///Kontruktor domyslny
 	KsiegarniaInternetowa();
@@ -18,5 +19,8 @@ public:
 	~KsiegarniaInternetowa();
 	///Metoda umozliwiajaca wyswietlenie danych obiektu, zamienia typy danych na string.
 	string wyswietlDane();
-	static int iloscKsiegarniInternetowych; ///<zmienna przechowujaca ilosc utworzonych obiektow (Ksiegarni internetowych)
+	///Metoda umozliwiajaca wyswietlenie typu obiektu.
+	int wyswietlTyp();
+	///Metoda umozliwiajaca wpisanie danych z pliku do obiektu
+	void wpiszDaneZPliku(ifstream & wejscie);
 };

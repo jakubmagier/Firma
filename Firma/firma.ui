@@ -19,13 +19,22 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>160</width>
-      <height>211</height>
+      <width>183</width>
+      <height>227</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QPushButton" name="przycisk1">
+       <property name="font">
+        <font>
+         <family>Comic Sans MS</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
         <string>Wyswietl cala baze</string>
        </property>
@@ -33,15 +42,17 @@
      </item>
      <item>
       <widget class="QPushButton" name="przycisk2">
-       <property name="text">
-        <string>Wyswietl dane (wybranego)</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="przycisk3">
        <property name="enabled">
         <bool>true</bool>
+       </property>
+       <property name="font">
+        <font>
+         <family>Comic Sans MS</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
        </property>
        <property name="text">
         <string>Dodaj obiekt</string>
@@ -49,21 +60,64 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="przycisk4">
+      <widget class="QPushButton" name="przycisk3">
+       <property name="font">
+        <font>
+         <family>Comic Sans MS</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
-        <string>Usun (wybrany)</string>
+        <string>Usun (zaznaczony obiekt)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="przycisk4">
+       <property name="font">
+        <font>
+         <family>Comic Sans MS</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Zapisz</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="przycisk5">
+       <property name="font">
+        <font>
+         <family>Comic Sans MS</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
-        <string>Zapisz do pliku</string>
+        <string>Zapisz jako</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="przycisk6">
+       <property name="font">
+        <font>
+         <family>Comic Sans MS</family>
+         <pointsize>10</pointsize>
+         <weight>75</weight>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
         <string>Wczytaj z pliku</string>
        </property>
@@ -74,11 +128,17 @@
    <widget class="QPushButton" name="przyciskZamknij">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>270</y>
+      <x>480</x>
+      <y>390</y>
       <width>111</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Kalinga</family>
+      <pointsize>14</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>ZAMKNIJ</string>
@@ -87,11 +147,17 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>270</y>
-      <width>81</width>
+      <x>40</x>
+      <y>250</y>
+      <width>141</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Algerian</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>Lista obiektow:</string>
@@ -100,21 +166,45 @@
    <widget class="QTextBrowser" name="poleTekstowe">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>30</y>
+      <x>250</x>
+      <y>20</y>
       <width>256</width>
       <height>192</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
     </property>
    </widget>
    <widget class="QListWidget" name="listaObiektow">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>260</y>
+      <x>30</x>
+      <y>270</y>
       <width>201</width>
       <height>151</height>
      </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::WinPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="miejsceZdjecia">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>230</y>
+      <width>181</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
@@ -151,7 +241,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>485</x>
-     <y>328</y>
+     <y>463</y>
     </hint>
     <hint type="destinationlabel">
      <x>299</x>
@@ -160,14 +250,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>przycisk3</sender>
+   <sender>przycisk2</sender>
    <signal>clicked()</signal>
    <receiver>FirmaClass</receiver>
    <slot>otworzTworzenieObiektu()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>98</x>
-     <y>149</y>
+     <y>118</y>
     </hint>
     <hint type="destinationlabel">
      <x>235</x>
@@ -176,14 +266,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>przycisk4</sender>
+   <sender>przycisk3</sender>
    <signal>clicked()</signal>
    <receiver>FirmaClass</receiver>
    <slot>usunObiekt()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>59</x>
-     <y>183</y>
+     <y>154</y>
     </hint>
     <hint type="destinationlabel">
      <x>219</x>
@@ -208,18 +298,66 @@
    </hints>
   </connection>
   <connection>
-   <sender>przycisk2</sender>
-   <signal>clicked()</signal>
+   <sender>listaObiektow</sender>
+   <signal>itemPressed(QListWidgetItem*)</signal>
    <receiver>FirmaClass</receiver>
    <slot>wyswietlDaneWybranego()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>75</x>
-     <y>107</y>
+     <x>190</x>
+     <y>395</y>
     </hint>
     <hint type="destinationlabel">
-     <x>198</x>
-     <y>86</y>
+     <x>252</x>
+     <y>445</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>przycisk6</sender>
+   <signal>clicked()</signal>
+   <receiver>FirmaClass</receiver>
+   <slot>wczytajPlik()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>162</x>
+     <y>258</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>259</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>przycisk4</sender>
+   <signal>clicked()</signal>
+   <receiver>FirmaClass</receiver>
+   <slot>zapiszDoObecnego()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>126</x>
+     <y>188</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>227</x>
+     <y>210</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>przycisk5</sender>
+   <signal>clicked()</signal>
+   <receiver>FirmaClass</receiver>
+   <slot>zapiszJako()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>232</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>231</x>
+     <y>239</y>
     </hint>
    </hints>
   </connection>
@@ -230,5 +368,8 @@
   <slot>usunObiekt()</slot>
   <slot>wyswietlStan()</slot>
   <slot>wyswietlDaneWybranego()</slot>
+  <slot>wczytajPlik()</slot>
+  <slot>zapiszDoObecnego()</slot>
+  <slot>zapiszJako()</slot>
  </slots>
 </ui>

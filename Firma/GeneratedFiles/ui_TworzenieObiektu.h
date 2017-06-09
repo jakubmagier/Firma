@@ -46,6 +46,7 @@ public:
     QLabel *label_8;
     QLineEdit *poleLiczba;
     QPushButton *przyciskUtworzObiekt;
+    QPushButton *przyciskAnuluj;
 
     void setupUi(QDialog *Dialog)
     {
@@ -60,7 +61,7 @@ public:
         new QListWidgetItem(listaTypow);
         new QListWidgetItem(listaTypow);
         listaTypow->setObjectName(QStringLiteral("listaTypow"));
-        listaTypow->setGeometry(QRect(90, 20, 211, 31));
+        listaTypow->setGeometry(QRect(90, 20, 211, 41));
         verticalLayoutWidget = new QWidget(Dialog);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
         verticalLayoutWidget->setGeometry(QRect(20, 70, 267, 311));
@@ -140,9 +141,14 @@ public:
         przyciskUtworzObiekt = new QPushButton(Dialog);
         przyciskUtworzObiekt->setObjectName(QStringLiteral("przyciskUtworzObiekt"));
         przyciskUtworzObiekt->setGeometry(QRect(310, 120, 75, 161));
+        przyciskAnuluj = new QPushButton(Dialog);
+        przyciskAnuluj->setObjectName(QStringLiteral("przyciskAnuluj"));
+        przyciskAnuluj->setGeometry(QRect(310, 310, 75, 41));
 
         retranslateUi(Dialog);
         QObject::connect(przyciskUtworzObiekt, SIGNAL(clicked()), Dialog, SLOT(close()));
+        QObject::connect(przyciskAnuluj, SIGNAL(clicked()), Dialog, SLOT(close()));
+        QObject::connect(listaTypow, SIGNAL(itemPressed(QListWidgetItem*)), Dialog, SLOT(ukrywaniePol()));
 
         QMetaObject::connectSlotsByName(Dialog);
     } // setupUi
@@ -170,6 +176,7 @@ public:
         label_7->setText(QApplication::translate("Dialog", "Liczba pracownikow:", Q_NULLPTR));
         label_8->setText(QApplication::translate("Dialog", "Liczba ksiazek/drukarek - zaleznie jaki obiekt tworzymy:", Q_NULLPTR));
         przyciskUtworzObiekt->setText(QApplication::translate("Dialog", "Utworz obiekt", Q_NULLPTR));
+        przyciskAnuluj->setText(QApplication::translate("Dialog", "Anuluj", Q_NULLPTR));
     } // retranslateUi
 
 };

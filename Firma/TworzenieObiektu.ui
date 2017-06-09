@@ -32,7 +32,7 @@
      <x>90</x>
      <y>20</y>
      <width>211</width>
-     <height>31</height>
+     <height>41</height>
     </rect>
    </property>
    <item>
@@ -146,6 +146,19 @@
     <string>Utworz obiekt</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="przyciskAnuluj">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>310</y>
+     <width>75</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Anuluj</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
@@ -158,6 +171,22 @@
     <hint type="sourcelabel">
      <x>347</x>
      <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>przyciskAnuluj</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>347</x>
+     <y>330</y>
     </hint>
     <hint type="destinationlabel">
      <x>199</x>
