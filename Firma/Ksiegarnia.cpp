@@ -45,3 +45,8 @@ void Ksiegarnia::wpiszDaneZPliku(ifstream& wejscie)
 	wejscie >> i;
 	ilosc_ksiazek = i;
 }
+
+string Ksiegarnia::wyswietlNazwe()
+{
+	return nazwa;
+}

@@ -46,3 +46,8 @@ void KsiegarniaInternetowa::wpiszDaneZPliku(ifstream& wejscie)
 	wejscie >> i;
 	ilosc_ksiazek = i;
 }
+
+string KsiegarniaInternetowa::wyswietlNazwe()
+{
+	return nazwa;
+}

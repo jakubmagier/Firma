@@ -28,4 +28,6 @@ public:
 	int wyswietlTyp();
 	///Metoda umozliwiajaca wpisanie danych z pliku do obiektu
 	void wpiszDaneZPliku(ifstream & wejscie);
+	///Metoda umozliwiajaca wyswietlenie nazwy obiektu.
+	string wyswietlNazwe();
 };

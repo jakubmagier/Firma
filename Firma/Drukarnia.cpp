@@ -45,3 +45,8 @@ void Drukarnia::wpiszDaneZPliku(ifstream& wejscie)
 	wejscie >> i;
 	ilosc_drukarek = i;
 }
+
+string Drukarnia::wyswietlNazwe()
+{
+	return nazwa;
+}

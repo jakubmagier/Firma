@@ -35,4 +35,6 @@ public:
 	Umozliwia wpisanie danych z pliku do obiektu
 	*/
 	virtual void wpiszDaneZPliku(ifstream& wejscie);
+	///Metoda umozliwiajaca wyswietlenie typu obiektu.
+	virtual string wyswietlNazwe() = 0;
 };

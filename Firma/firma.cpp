@@ -174,23 +174,26 @@ void Firma::wczytajPlik()
 			{
 				Ksiegarnia *tmp = new Ksiegarnia();
 				tmp[0].wpiszDaneZPliku(input);
+				string nazwa = tmp[0].wyswietlNazwe();
 				przedsiebiorstwo.push_back(tmp);
 				ui.poleTekstowe->clear();
-				ui.listaObiektow->addItem("Ksiegarnia stacjonarna");
+				ui.listaObiektow->addItem("Ksiegarnia stacjonarna " + QString::fromStdString(nazwa));
 			}else if (rodzaj == 2)
 			{
 				KsiegarniaInternetowa *tmp = new KsiegarniaInternetowa();
 				tmp[0].wpiszDaneZPliku(input);
+				string nazwa = tmp[0].wyswietlNazwe();
 				przedsiebiorstwo.push_back(tmp);
 				ui.poleTekstowe->clear();
-				ui.listaObiektow->addItem("Ksiegarnia internetowa");
+				ui.listaObiektow->addItem("Ksiegarnia internetowa " + QString::fromStdString(nazwa));
 			}else if (rodzaj == 3)
 			{
 				Drukarnia *tmp = new Drukarnia();
 				tmp[0].wpiszDaneZPliku(input);
+				string nazwa = tmp[0].wyswietlNazwe();
 				przedsiebiorstwo.push_back(tmp);
 				ui.poleTekstowe->clear();
-				ui.listaObiektow->addItem("Drukarnia");
+				ui.listaObiektow->addItem("Drukarnia " + QString::fromStdString(nazwa));
 			}
 		}
 		plik.close();
