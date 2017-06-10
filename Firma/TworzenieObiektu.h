@@ -9,6 +9,4 @@ class TworzenieObiektu : public QDialog, public Ui::Dialog
 
 public:
 	TworzenieObiektu(QWidget *parent = 0);
-	public slots:
-
 };

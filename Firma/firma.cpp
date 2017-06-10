@@ -31,13 +31,13 @@ Firma::Firma(QWidget *parent)
 
 	Ksiegarnia *ks = new Ksiegarnia("Armagedon", "Nowak", 123456789, "Marszalkowska", 3, 4);
 	przedsiebiorstwo.push_back(ks);
-	ui.listaObiektow->addItem("Ksiegarnia stacjonarna");
+	ui.listaObiektow->addItem("Ksiegarnia stacjonarna " + QString::fromStdString("Armagedon"));
 	KsiegarniaInternetowa *ksi = new KsiegarniaInternetowa("Zeus", "Kawka", 19239388, "zeus.pl", 2, 10);
 	przedsiebiorstwo.push_back(ksi);
-	ui.listaObiektow->addItem("Ksiegarnia internetowa");
+	ui.listaObiektow->addItem("Ksiegarnia internetowa " + QString::fromStdString("Zeus"));
 	Drukarnia *dr = new Drukarnia("Printer", "Malek", 546723892, "Wilenska", 1, 5);
 	przedsiebiorstwo.push_back(dr);
-	ui.listaObiektow->addItem("Drukarnia");
+	ui.listaObiektow->addItem("Drukarnia " + QString::fromStdString("Printer"));
 
 	QObject::connect(stworzony.przyciskUtworzObiekt, SIGNAL(clicked()), this, SLOT(dodajObiekt()));
 
@@ -55,36 +55,42 @@ void Firma::dodajObiekt()
 {
 	ui.poleTekstowe->clear();
 	ui.miejsceZdjecia->clear();
+
 	string nazwa, wlasciciel, adres, adres_domeny;
 	int rodzaj, nr_tel, liczba_pracownikow, liczba;
+
 	rodzaj = stworzony.listaTypow->currentRow();
 	nr_tel = stworzony.poleNrTel->text().toInt();
 	liczba_pracownikow = stworzony.poleLiczbaPracownikow->text().toInt();
 	liczba = stworzony.poleLiczba->text().toInt();
 	nazwa = stworzony.poleNazwa->text().toStdString();
+	nazwa.erase(std::remove(nazwa.begin(), nazwa.end(), ' '), nazwa.end());
 	wlasciciel = stworzony.poleWlasciciel->text().toStdString();
+	wlasciciel.erase(std::remove(wlasciciel.begin(), wlasciciel.end(), ' '), wlasciciel.end());
 	adres = stworzony.poleAdres->text().toStdString();
+	adres.erase(std::remove(adres.begin(), adres.end(), ' '), adres.end());
 	adres_domeny = stworzony.poleAdresDomeny->text().toStdString();
+	adres_domeny.erase(std::remove(adres_domeny.begin(), adres_domeny.end(), ' '), adres_domeny.end());
 
 		if (rodzaj == 0) 
 		{
 			KsiegarniaInternetowa *tmp = new KsiegarniaInternetowa(nazwa, wlasciciel, nr_tel, adres_domeny, liczba_pracownikow, liczba);
 			przedsiebiorstwo.push_back(tmp);
-			ui.listaObiektow->addItem("Ksiegarnia internetowa");
+			ui.listaObiektow->addItem("Ksiegarnia internetowa " + QString::fromStdString(nazwa));
 			ui.listaObiektow->setCurrentRow(0);
 		}
 		else if (rodzaj == 1) 
 		{
 			Ksiegarnia *tmp = new Ksiegarnia(nazwa, wlasciciel, nr_tel, adres, liczba_pracownikow, liczba);
 			przedsiebiorstwo.push_back(tmp);
-			ui.listaObiektow->addItem("Ksiegarnia stacjonarna");
+			ui.listaObiektow->addItem("Ksiegarnia stacjonarna " + QString::fromStdString(nazwa));
 			ui.listaObiektow->setCurrentRow(0);
 		}
 		else if (rodzaj == 2) 
 		{
 			Drukarnia *tmp = new Drukarnia(nazwa, wlasciciel, nr_tel, adres, liczba_pracownikow, liczba);
 			przedsiebiorstwo.push_back(tmp);
-			ui.listaObiektow->addItem("Drukarnia");
+			ui.listaObiektow->addItem("Drukarnia " + QString::fromStdString(nazwa));
 			ui.listaObiektow->setCurrentRow(0);
 		}
 }
@@ -114,6 +120,13 @@ void Firma::otworzTworzenieObiektu()
 {
 	ui.poleTekstowe->clear();
 	ui.miejsceZdjecia->clear();
+	stworzony.poleNrTel->clear();
+	stworzony.poleLiczbaPracownikow->clear();
+	stworzony.poleLiczba->clear();
+	stworzony.poleNazwa->clear();
+	stworzony.poleWlasciciel->clear();
+	stworzony.poleAdres->clear();
+	stworzony.poleAdresDomeny->clear();
 	stworzony.exec();
 }
 

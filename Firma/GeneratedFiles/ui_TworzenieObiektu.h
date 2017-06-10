@@ -148,7 +148,6 @@ public:
         retranslateUi(Dialog);
         QObject::connect(przyciskUtworzObiekt, SIGNAL(clicked()), Dialog, SLOT(close()));
         QObject::connect(przyciskAnuluj, SIGNAL(clicked()), Dialog, SLOT(close()));
-        QObject::connect(listaTypow, SIGNAL(itemPressed(QListWidgetItem*)), Dialog, SLOT(ukrywaniePol()));
 
         QMetaObject::connectSlotsByName(Dialog);
     } // setupUi

@@ -6,6 +6,7 @@
 #include <Qt>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QValidator>
 #include "ui_firma.h"
 #include "Ksiegarnia.h"
 #include "Drukarnia.h"
